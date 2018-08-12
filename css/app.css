@@ -128,6 +128,10 @@ footer span {
   margin-left: .5rem;
 }
 
+footer span:hover {
+  border-bottom: 1px solid #606f7b;
+}
+
 footer a {
   color: #606f7b;
   text-decoration: none;

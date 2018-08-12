@@ -114,6 +114,9 @@ footer {
       }
       span {
             margin-left: .5rem;
+            &:hover {
+                  border-bottom: 1px solid #606f7b;
+            }
       }
       a {
            color: #606f7b;
