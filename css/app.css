@@ -3,6 +3,8 @@
 html, body {
   font-family: "Roboto", sans-serif;
   font-size: 18px;
+  padding: 0;
+  margin: 0;
 }
 
 .container {
@@ -135,5 +137,77 @@ footer span:hover {
 footer a {
   color: #606f7b;
   text-decoration: none;
+}
+
+/* Navigation */
+.topNav {
+  position: fixed;
+  width: 100%;
+  background-color: #1c2022;
+  top: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.topNav ul {
+  padding: 0;
+  margin: 0;
+}
+
+.topNav ul li {
+  display: inline;
+  color: gray;
+  font-size: 14px;
+  padding: 0;
+  margin: 0;
+}
+
+.topNav ul li:hover {
+  border-bottom: 2px solid #e47676;
+  padding-bottom: 14px;
+}
+
+.topNav img {
+  padding-top: 4px;
+  padding-left: 4px;
+}
+
+.topNav .coffee {
+  font-weight: 300;
+  font-size: 16px;
+  background-color: #e47676;
+  color: #fff;
+  padding: 15px 25px;
+  margin-left: 15px;
+  border: none;
+}
+
+.topNav .coffee:hover {
+  background-color: #e06161;
+}
+
+.sideNav {
+  height: 100vh;
+  background: #24282a;
+  width: 288px;
+  top: 48px;
+  position: fixed;
+  z-index: -1;
+  padding: 0;
+  margin: 0;
+}
+
+.sideNav h2 {
+  font-size: 18px;
+  color: gray;
+  padding: 25px 0 0 35px;
+  margin: 0;
+}
+
+.sideNav p {
+  color: #fff;
+  font-size: 16px;
+  padding: 10px 0 0 50px;
+  margin: 0;
 }
 /*# sourceMappingURL=app.css.map */

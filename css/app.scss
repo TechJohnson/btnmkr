@@ -1,6 +1,7 @@
 /* Colors */      
 $pink: #e47676;
 $gray: #b8c2cc;
+$dark-gray: hsla(0, 0%, 9%, 0.90);
 $bg-gray: #F1F5F8;
 $white: #fff;
 $shadow: 0 10px 50px 0 rgba(0,0,0,.05), 0 5px 15px 0 rgba(0,0,0,.03);
@@ -10,6 +11,8 @@ $font: 'Roboto', sans-serif;;
 html, body {
       font-family: $font;
       font-size: 18px;
+      padding: 0;
+      margin: 0;
 }
 
 .container {
@@ -121,5 +124,69 @@ footer {
       a {
            color: #606f7b;
            text-decoration: none;
+      }
+}
+
+/* Navigation */
+.topNav {
+      position: fixed;
+      width: 100%;
+      background-color: rgb(28, 32, 34);
+      top: 0;
+      padding: 0;
+      margin: 0;
+      ul {
+            padding: 0;
+            margin: 0;
+            li {
+                  display: inline;
+                  color: darken($white, 50%);
+                  font-size: 14px;
+                  padding: 0;
+                  margin: 0;
+                  &:hover {
+                        border-bottom: 2px solid $pink;
+                        padding-bottom: 14px;
+                  }
+            }
+      }
+      img {
+            padding-top: 4px;
+            padding-left: 4px;
+      }
+      .coffee {
+            font-weight: 300;
+            font-size: 16px;
+            background-color: $pink;
+            color: $white;
+            padding: 15px 25px;
+            margin-left: 15px;
+            border: none;
+            &:hover {
+                  background-color: darken($pink, 5%);
+            }
+      }
+}
+
+.sideNav {
+      height: 100vh;
+      background: rgb(36, 40, 42);
+      width: 288px;
+      top: 48px;
+      position: fixed;
+      z-index: -1;
+      padding: 0;
+      margin: 0;
+      h2 {
+            font-size: 18px;
+            color: darken($white, 50%);
+            padding: 25px 0 0 35px;
+            margin: 0;
+      }
+      p {
+            color: $white;
+            font-size: 16px;
+            padding: 10px 0 0 50px;
+            margin: 0;
       }
 }
