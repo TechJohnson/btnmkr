@@ -162,7 +162,7 @@ footer a {
   margin: 0;
 }
 
-.topNav ul li:hover {
+.topNav ul li:hoverfirst-of-type {
   border-bottom: 2px solid #e47676;
   padding-bottom: 14px;
 }
