@@ -1,64 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
-    
+
 <head>
-      <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-123803678-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123803678-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'UA-123803678-1');
-</script>
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="author" content="Steven Johnson & Ashely Brown">
-    <meta name="description" content="An easy-to-use button maker for all web developers.">
-    <meta name="keywords" content="css buttons, html buttons, btnmkr, html, css, web development, web dev, web developer, web design">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" />
-    <link rel="stylesheet" href="https://unpkg.com/flexboxgrid2@7.1.0/flexboxgrid2.css">
-     <link rel="stylesheet" href="css/app.css">
-    <link rel="stylesheet" href="css/hover.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
-    <title>An easy-to-use button maker for all web developers - btnmkr</title>
+    gtag('config', 'UA-123803678-1');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="author" content="Steven Johnson & Ashely Brown">
+  <meta name="description" content="An easy-to-use button maker for all web developers.">
+  <meta name="keywords" content="css buttons, html buttons, btnmkr, html, css, web development, web dev, web developer, web design">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/flexboxgrid2@7.1.0/flexboxgrid2.css">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/hover.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+  <title>An easy-to-use button maker for all web developers - btnmkr</title>
 </head>
 
 <body>
-
-  <!--Top Navigation-->
-  <nav class="topNav">
-    <div class="row middle-xs">
-      <div class="col-md-1">
-        <a href="/"><img src="/img/btnmkr_logo_white.svg" alt="btnmkr logo" height="30"></a>
+  <div class="main-wrapper">
+    <!--Top Navigation-->
+    <nav class="topNav">
+      <a href="/">
+        <img src="/img/btnmkr_logo_white.svg" alt="btnmkr logo" height="30">
+      </a>
+      <div class="endwrapper">
+        <a>Support</a>
+        <button class="coffee">Buy Us Coffee</button>
       </div>
-      <div class="col-md-11 end-xs">
+    </nav>
+    
+    <main>
+      <!--Side Navigation-->
+      <nav class="sideNav">
+        <h2>Default state</h2>
         <ul>
-          <li>Support</li>
-          <li><button class="coffee">Buy Us Coffee</button></li>
+          <li class="sideNav-item">
+            <a class="dropdown-toggle">Padding</a>
+            <div class="controlBox collapse">
+              <label for="horPad">Horinzontal padding</label>
+              <input type="range" value="0" id="horPad">
+              <label for="verPad">Vertical padding</label>
+              <input type="range" value="0" id="verPad">
+            </div>
+          </li>
+
+          <li class="sideNav-item">
+            <a class="dropdown-toggle">Text & Font</a>
+            <div class="controlBox collapse">
+              <label for="textVal">Enter your text</label>
+              <input type="text" value="Enter text" id="textVal">
+              <label for="colPick">Text color</label>
+              <div class="color-wrapper">
+                <input type="text" value="#fff" class="hex-box" id="txtColPickHex">
+                <div class="color-picker" id="txtColPick"></div>
+              </div>
+            </div>
+          </li>
+          <li class="sideNav-item">
+            <a class="dropdown-toggle">Background</a>
+            <div class="controlBox collapse">
+              <label for="colPick">Background color</label>
+              <div class="color-wrapper">
+                <input type="text" value="#e47676" class="hex-box" id="bgColPickHex">
+                <div class="color-picker" id="bgColPick"></div>
+              </div>
+            </div>
+          </li>
+          <li class="sideNav-item">
+            <a class="dropdown-toggle">Border</a>
+            <div class="controlBox collapse">
+              <label for="colPick">Border color</label>
+              <div class="color-wrapper">
+                <input type="text" value="#e47676" class="hex-box" id="borderColPickHex">
+                <div class="color-picker" id="borderColPick"></div>
+              </div>
+            </div>
+          </li>
         </ul>
+        <h2>Hover state</h2>
+        <ul>
+          <li class="sideNav-item">
+            <a class="dropdown-toggle">Padding</a>
+            <div class="controlBox collapse">
+              <label for="horPad">Horinzontal padding</label>
+              <input type="range" value="0" id="horPad">
+              <label for="verPad">Vertical padding</label>
+              <input type="range" value="0" id="verPad">
+            </div>
+          </li>
+
+          <li class="sideNav-item">
+            <a class="dropdown-toggle">Text & Font</a>
+            <div class="controlBox collapse">
+              <label for="textVal">Enter your text</label>
+              <input type="text" value="Enter text" id="hovtextVal" disabled>
+              <label for="colPick">Text color</label>
+              <div class="color-wrapper">
+                <input type="text" value="#fff" class="hex-box" id="hovtxtColPickHex">
+                <div class="color-picker" id="hovtxtColPick"></div>
+              </div>
+            </div>
+          </li>
+          <li class="sideNav-item">
+            <a class="dropdown-toggle">Background</a>
+            <div class="controlBox collapse">
+              <label for="colPick">Background color</label>
+              <div class="color-wrapper">
+                <input type="text" value="#e47676" class="hex-box" id="hovbgColPickHex">
+                <div class="color-picker" id="hovbgColPick"></div>
+              </div>
+            </div>
+          </li>
+          <li class="sideNav-item">
+            <a class="dropdown-toggle">Border</a>
+            <div class="controlBox collapse">
+              <label for="colPick">Border color</label>
+              <div class="color-wrapper">
+                <input type="text" value="#e47676" class="hex-box" id="hovborderColPickHex">
+                <div class="color-picker" id="hovborderColPick"></div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </nav>
+
+      <!--Main button window-->
+      <div class="button-play-area">
+        <button id="cstBtn" class="btn btn_solid">Enter text</button>
       </div>
-    </div>
-  </nav>
 
-  <!--Side Navigation-->
-  <nav class="sideNav">
-    <h2>Default State</h2>
-    <p>Padding</p>
-    <p>Text & Font</p>
-    <p>Background</p>
-    <p>Border</p>
-    <h2>Hover State</h2>
-    <p>Padding</p>
-    <p>Text & Font</p>
-    <p>Background</p>
-    <p>Border</p>
-  </nav>
+    </main>
+    <!-- main-wrapper end-->
+  </div>
 
-
-
-
+  <!-- Scripts-->
+  <script src="https://unpkg.com/vanilla-picker@2"></script>
+  <script src="js/main.js"></script>
 </body>
+
 </html>
