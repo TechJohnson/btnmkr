@@ -37,6 +37,9 @@ body {
 
 header {
   border-top: 6px solid #e47676;
+  background: url(/img/btnmkr_header.svg);
+  background-repeat: repeat;
+  background-size: 169.87px 77.5px;
   background-color: #F1F5F8;
   height: 100vh;
   margin: auto 0;
