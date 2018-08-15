@@ -303,7 +303,7 @@
    align-items: center;
    height: calc(100vh - 48px);
    #output {
-     display:none;
+      display:none;
       width:30%;
       min-height:300px; 
       margin-top:100px;
@@ -313,10 +313,13 @@
 
 .panel {
   width:25%;
+  max-width: 300px;
   height: calc(100vh - 48px);
   background-color: #2d2d2d;
   padding:20px;
-  pre {
-    font-size:.7em;
+  code {
+    font-size: .7em;
+    overflow: unset;
+    word-break: break-word;
   }
 }
