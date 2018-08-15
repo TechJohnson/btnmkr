@@ -40,7 +40,8 @@ let hoverStyles = {
   brTopLeft: "5px",
   brTopRight: "5px",
   brBottomLeft: "5px",
-  brBottomRight: "5px"
+  brBottomRight: "5px",
+  fontSize: "18px"
 }
 let defaultStyles = {
   backgroundColor: "#e47676",
@@ -53,7 +54,8 @@ let defaultStyles = {
   brTopLeft: "5px",
   brTopRight: "5px",
   brBottomLeft: "5px",
-  brBottomRight: "5px"
+  brBottomRight: "5px",
+  fontSize: "18px"
 }
 const render = () => {
   const targ1 = document.getElementById('styles');
@@ -69,6 +71,7 @@ const render = () => {
   border-color: ${defaultStyles.borderColor};
   border-radius: ${defaultStyles.brTopLeft} ${defaultStyles.brTopRight} ${defaultStyles.brBottomLeft} ${defaultStyles.brBottomRight};
   color: ${defaultStyles.textColor};
+  font-size: ${defaultStyles.fontSize};
 }
 #cstBtn:hover { 
   background-color: ${hoverStyles.backgroundColor};
@@ -79,6 +82,7 @@ const render = () => {
   border-color: ${hoverStyles.borderColor};
   border-radius: ${hoverStyles.brTopLeft} ${hoverStyles.brTopRight} ${hoverStyles.brBottomLeft} ${hoverStyles.brBottomRight};
   color: ${hoverStyles.textColor};
+  font-size: ${hoverStyles.fontSize};
 }`;
   targ1.innerHTML = `<style> ${styles} </style>`;
   targ2.innerHTML = styles.replace('#cstBtn', '.myButton').replace('#cstBtn:hover', '.myButton:hover');
@@ -94,6 +98,7 @@ const HoverVertical = document.getElementById('hovverPad');
 const HoverHorizontal = document.getElementById('hovhorPad');
 const textBox = document.getElementById('textVal');
 const linkUrl = document.getElementById('linkUrl');
+const fontSize = document.getElementById('fontSize');
 const TxtcpTarg = document.getElementById('txtColPick');
 const TxtColorPicker = new Picker({parent: TxtcpTarg, editor:false});
 const TxtHexBox = document.getElementById('txtColPickHex');
@@ -104,6 +109,7 @@ const BordercpTarg = document.getElementById('borderColPick');
 const BorderColorPicker = new Picker({parent: BordercpTarg, editor:false});
 const BorderHexBox = document.getElementById('borderColPickHex');
 const HoverBorderRadius = document.getElementById('hovborderRadius');
+const HoverfontSize = document.getElementById('hovfontSize');
 const HoverTxtcpTarg = document.getElementById('hovtxtColPick');
 const HoverTxtColorPicker = new Picker({parent: HoverTxtcpTarg, editor:false});
 const HoverTxtHexBox = document.getElementById('hovtxtColPickHex');
@@ -123,6 +129,10 @@ linkUrl.addEventListener('input', e => {
   document.querySelector('.html').innerHTML = `&lt;a href="${e.target.value}" class="myButton"&gt;${button.textContent}&lt;/a&gt;`;
   render();
 });
+fontSize.addEventListener('input', e => {
+  defaultStyles.fontSize = e.target.value+"px";
+  render();
+})
 vertical.addEventListener('input', e => {
   defaultStyles.paddingTop = e.target.value+"px";
   defaultStyles.paddingBottom = e.target.value+"px";
@@ -164,6 +174,10 @@ BgColorPicker.onChange = color => {
 }
 
 //HOVER
+HoverfontSize.addEventListener('input', e => {
+  hoverStyles.fontSize = e.target.value+"px";
+  render();
+})
 HoverVertical.addEventListener('input', e => {
   hoverStyles.paddingTop = e.target.value+"px";
   hoverStyles.paddingBottom= e.target.value+"px";
