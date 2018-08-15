@@ -61,30 +61,30 @@ const renderCss = () => {
   let styles = "";
 
   styles = 
-  `
-      #cstBtn {
-        background-color: ${defaultStyles.backgroundColor};
-        padding-top:${defaultStyles.paddingTop};
-        padding-bottom:${defaultStyles.paddingBottom};
-        padding-left:${defaultStyles.paddingLeft};
-        padding-right:${defaultStyles.paddingRight};
-        border-color: ${defaultStyles.borderColor};
-        color: ${defaultStyles.textColor};
-        border-radius: ${defaultStyles.brTopLeft} ${defaultStyles.brTopRight} ${defaultStyles.brBottomLeft} ${defaultStyles.brBottomRight};
-      }
-      #cstBtn:hover { 
-        background-color: ${hoverStyles.backgroundColor};
-        padding-top:${hoverStyles.paddingTop};
-        padding-bottom:${hoverStyles.paddingBottom};
-        padding-left:${hoverStyles.paddingLeft};
-        padding-right:${hoverStyles.paddingRight};
-        border-color: ${hoverStyles.borderColor};
-        color: ${hoverStyles.textColor};
-        border-radius: ${hoverStyles.brTopLeft} ${hoverStyles.brTopRight} ${hoverStyles.brBottomLeft} ${hoverStyles.brBottomRight};
-      }`;
+`#cstBtn {
+  background-color: ${defaultStyles.backgroundColor};
+  padding-top:${defaultStyles.paddingTop};
+  padding-bottom:${defaultStyles.paddingBottom};
+  padding-left:${defaultStyles.paddingLeft};
+  padding-right:${defaultStyles.paddingRight};
+  border-color: ${defaultStyles.borderColor};
+  border-radius: ${defaultStyles.brTopLeft} ${defaultStyles.brTopRight} ${defaultStyles.brBottomLeft} ${defaultStyles.brBottomRight};
+  color: ${defaultStyles.textColor};
+}
+#cstBtn:hover { 
+  background-color: ${hoverStyles.backgroundColor};
+  padding-top:${hoverStyles.paddingTop};
+  padding-bottom:${hoverStyles.paddingBottom};
+  padding-left:${hoverStyles.paddingLeft};
+  padding-right:${hoverStyles.paddingRight};
+  border-color: ${hoverStyles.borderColor};
+  border-radius: ${hoverStyles.brTopLeft} ${hoverStyles.brTopRight} ${hoverStyles.brBottomLeft} ${hoverStyles.brBottomRight};
+  color: ${hoverStyles.textColor};
+}`;
   targ1.innerHTML = `<style> ${styles} </style>`;
-  targ2.innerHTML = styles
+  targ2.innerHTML = styles.replace('#cstBtn', '.myButton').replace('#cstBtn:hover', '.myButton:hover');
   hljs.highlightBlock(targ2);
+  hljs.highlightBlock(document.querySelector('.html'));
 }
 renderCss();
 hljs.initHighlightingOnLoad();
@@ -116,6 +116,8 @@ const HoverBorderHexBox = document.getElementById('hovborderColPickHex');
 
 textBox.addEventListener('input', e => {
   button.textContent = e.target.value;
+  document.querySelector('.html').innerHTML = `&lt;a href="#" class="myButton"&gt;${e.target.value}&lt;/a&gt;`;
+  renderCss();
 })
 vertical.addEventListener('input', e => {
   defaultStyles.paddingTop = e.target.value+"px";
