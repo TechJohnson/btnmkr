@@ -35,7 +35,7 @@ body {
   display: flex;
 }
 
-header {
+.homepageHeader {
   border-top: 6px solid #e47676;
   background: url(/img/btnmkr_header.svg);
   background-repeat: repeat;
@@ -46,16 +46,16 @@ header {
   padding: 0;
 }
 
-header .row {
+.homepageHeader .row {
   height: 100vh;
 }
 
-header .row h1 {
+.homepageHeader .row h1 {
   font-size: 2rem;
   margin-bottom: .25rem;
 }
 
-header .row h2 {
+.homepageHeader .row h2 {
   font-size: 2.25rem;
   margin-top: 3rem;
   margin-bottom: 2.5rem;
@@ -63,12 +63,13 @@ header .row h2 {
   line-height: 2.75rem;
 }
 
-header .row .version {
+.homepageHeader .row .version {
   font-size: 1.125rem;
   color: #b8c2cc;
   font-weight: 700;
 }
 
+/* Support Page */
 /* Buttons */
 a:hover,
 button:hover {
