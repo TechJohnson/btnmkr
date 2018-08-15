@@ -176,6 +176,17 @@
    display: flex;
    justify-content: space-between;
    align-items: center;
+   .beta {
+     display: flex;
+     align-items: center;
+     text-decoration: none;
+     span {
+       padding-left: 10px;
+       color: darken($white, 75%);
+       text-decoration: none;
+       font-size: 14px;
+     }
+   }
    .endwrapper a {
      padding: 14px 0;
      color: darken($white, 50%);
@@ -186,7 +197,7 @@
      }
    }
    img {
-     padding: 4px 0 0 4px;
+     padding: 5px 0 5px 5px;
    }
    .coffee {
      font-weight: 300;
