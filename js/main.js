@@ -186,7 +186,7 @@ HoverVertical.addEventListener('input', e => {
 HoverHorizontal.addEventListener('input', e => {
   hoverStyles.paddingLeft = e.target.value+"px";
   hoverStyles.paddingRight= e.target.value+"px";
-  
+  render();
 })
 brs = document.querySelectorAll('.brHover');
 brs.forEach(el => {
