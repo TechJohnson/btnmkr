@@ -225,7 +225,7 @@ footer a {
 .sideNav {
   min-height: calc(100vh - 48px);
   background: #24282a;
-  width: 288px;
+  width: 25%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -361,9 +361,21 @@ footer a {
 }
 
 .button-play-area #output {
+  display: none;
   width: 30%;
   min-height: 300px;
   margin-top: 100px;
   border: 1px solid #ccc;
+}
+
+.panel {
+  width: 25%;
+  height: calc(100vh - 48px);
+  background-color: #24282a;
+  padding: 20px;
+}
+
+.panel pre {
+  font-size: .7em;
 }
 /*# sourceMappingURL=app.css.map */
