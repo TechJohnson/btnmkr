@@ -29,27 +29,59 @@ let button = document.getElementById('cstBtn');
 //   });
 // })
 
-//Padding controllers
+let hoverStyles = {
+  backgroundColor: "#e47676",
+  textColor:"#fff",
+  borderColor:"#e47676",  
+  paddingTop:"12px",
+  paddingBottom:"12px",
+  paddingLeft:"48px",
+  paddingRight:"48px"
+}
+let defaultStyles = {
+  backgroundColor: "#e47676",
+  textColor:"#fff",
+  borderColor:"#e47676",  
+  paddingTop:"12px",
+  paddingBottom:"12px",
+  paddingLeft:"48px",
+  paddingRight:"48px"
+}
+const renderCss = () => {
+  const targ1 = document.getElementById('styles');
+  //const targ2 = document.getElementById('output');
+  let styles = "";
+
+  styles = 
+  `
+      #cstBtn {
+        background-color: ${defaultStyles.backgroundColor};
+        padding-top:${defaultStyles.paddingTop};
+        padding-bottom:${defaultStyles.paddingBottom};
+        padding-left:${defaultStyles.paddingLeft};
+        padding-right:${defaultStyles.paddingRight};
+        border-color: ${defaultStyles.borderColor};
+        color: ${defaultStyles.textColor};
+      }
+      #cstBtn:hover { 
+        background-color: ${hoverStyles.backgroundColor};
+        padding-top:${hoverStyles.paddingTop};
+        padding-bottom:${hoverStyles.paddingBottom};
+        padding-left:${hoverStyles.paddingLeft};
+        padding-right:${hoverStyles.paddingRight};
+        border-color: ${hoverStyles.borderColor};
+        color: ${hoverStyles.textColor};
+      }`;
+  targ1.innerHTML = `<style> ${styles} </style>`;
+  //targ2.innerHTML = `<pre> ${styles} </pre>`;
+}
+renderCss();
+//Targets
 const vertical = document.getElementById('verPad');
 const horizontal = document.getElementById('horPad');
-vertical.addEventListener('input', e => {
-  button.style.paddingTop = e.target.value+"px";
-  button.style.paddingBottom= e.target.value+"px";
-})
-horizontal.addEventListener('input', e => {
-  button.style.paddingLeft = e.target.value+"px";
-  button.style.paddingRight= e.target.value+"px";
-})
-
-//Text controller 
+const HoverVertical = document.getElementById('hovverPad');
+const HoverHorizontal = document.getElementById('hovhorPad');
 const textBox = document.getElementById('textVal');
-const HovertextBox = document.getElementById('hobtextVal');
-textBox.addEventListener('input', e => {
-  button.textContent = e.target.value;
-  HovertextBox.value = e.target.value;
-})
-
-//colors
 const TxtcpTarg = document.getElementById('txtColPick');
 const TxtColorPicker = new Picker({parent: TxtcpTarg, editor:false});
 const TxtHexBox = document.getElementById('txtColPickHex');
@@ -59,7 +91,6 @@ const BgHexBox = document.getElementById('bgColPickHex');
 const BordercpTarg = document.getElementById('borderColPick');
 const BorderColorPicker = new Picker({parent: BordercpTarg, editor:false});
 const BorderHexBox = document.getElementById('borderColPickHex');
-
 const HoverTxtcpTarg = document.getElementById('hovtxtColPick');
 const HoverTxtColorPicker = new Picker({parent: HoverTxtcpTarg, editor:false});
 const HoverTxtHexBox = document.getElementById('hovtxtColPickHex');
@@ -70,39 +101,71 @@ const HoverBordercpTarg = document.getElementById('hovborderColPick');
 const HoverBorderColorPicker = new Picker({parent: HoverBordercpTarg, editor:false});
 const HoverBorderHexBox = document.getElementById('hovborderColPickHex');
 
+vertical.addEventListener('input', e => {
+  defaultStyles.paddingTop = e.target.value+"px";
+  defaultStyles.paddingBottom = e.target.value+"px";
+  renderCss();
+})
+horizontal.addEventListener('input', e => {
+  defaultStyles.paddingLeft = e.target.value+"px";
+  defaultStyles.paddingRight= e.target.value+"px";
+  renderCss();
+})
+HoverVertical.addEventListener('input', e => {
+  hoverStyles.paddingTop = e.target.value+"px";
+  hoverStyles.paddingBottom= e.target.value+"px";
+  renderCss();
+})
+HoverHorizontal.addEventListener('input', e => {
+  hoverStyles.paddingLeft = e.target.value+"px";
+  hoverStyles.paddingRight= e.target.value+"px";
+  renderCss();
+})
+textBox.addEventListener('input', e => {
+  button.textContent = e.target.value;
+})
+BorderColorPicker.setColor('#e47676');
+BorderColorPicker.onChange = color => {
+  defaultStyles.borderColor = color.hex;
+  BorderHexBox.value = color.hex;
+  BordercpTarg.style.backgroundColor = color.hex;
+  renderCss();
+}
 TxtColorPicker.setColor('#fff');
 TxtColorPicker.onChange = color => {
-  button.style.color = color.hex;
+  defaultStyles.textColor = color.hex;
   TxtHexBox.value = color.hex;
   TxtcpTarg.style.backgroundColor = color.hex;
+  renderCss();
 }
 BgColorPicker.setColor('#e47676');
 BgColorPicker.onChange = color => {
-  button.style.backgroundColor = color.hex;
+  defaultStyles.backgroundColor = color.hex;
   BgHexBox.value = color.hex;
   BgcpTarg.style.backgroundColor = color.hex;
+  renderCss();
 }
+
+
 HoverBorderColorPicker.setColor('#e47676');
 HoverBorderColorPicker.onChange = color => {
-  button.style.borderColor = color.hex;
+  hoverStyles.borderColor = color.hex;
   BorderHexBox.value = color.hex;
   BordercpTarg.style.backgroundColor = color.hex;
+  renderCss();
 }
-// HoverTxtColorPicker.setColor('#fff');
-// HoverTxtColorPicker.onChange = color => {
-//   button.style.color = color.hex;
-//   HoverTxtHexBox.value = color.hex;
-//   HoverTxtcpTarg.style.backgroundColor = color.hex;
-// }
-// HoverBgColorPicker.setColor('#e47676');
-// HoverBgColorPicker.onChange = color => {
-//   button.style.backgroundColor = color.hex;
-//   HoverBgHexBox.value = color.hex;
-//   HoverBgcpTarg.style.backgroundColor = color.hex;
-// }
-// HoverBorderColorPicker.setColor('#e47676');
-// HoverBorderColorPicker.onChange = color => {
-//   button.style.borderColor = color.hex;
-//   HoverBorderHexBox.value = color.hex;
-//   HoverBordercpTarg.style.backgroundColor = color.hex;
-// }
+HoverTxtColorPicker.setColor('#fff');
+HoverTxtColorPicker.onChange = color => {
+  hoverStyles.textColor = color.hex;
+  HoverTxtHexBox.value = color.hex;
+  HoverTxtcpTarg.style.backgroundColor = color.hex;
+  renderCss();
+}
+HoverBgColorPicker.setColor('#e47676');
+HoverBgColorPicker.onChange = color => {
+  hoverStyles.backgroundColor = color.hex;
+  HoverBgHexBox.value = color.hex;
+  HoverBgcpTarg.style.backgroundColor = color.hex;
+  renderCss();
+}
+

@@ -346,6 +346,10 @@ footer a {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   min-width: 320px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -354,5 +358,12 @@ footer a {
       -ms-flex-align: center;
           align-items: center;
   height: calc(100vh - 48px);
+}
+
+.button-play-area #output {
+  width: 30%;
+  min-height: 300px;
+  margin-top: 100px;
+  border: 1px solid #ccc;
 }
 /*# sourceMappingURL=app.css.map */

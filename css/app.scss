@@ -297,8 +297,15 @@
  .button-play-area {
    display: flex;
    width: 100%;
+   flex-direction:column;
    min-width: 320px;
    justify-content: center;
    align-items: center;
    height: calc(100vh - 48px);
+   #output {
+      width:30%;
+      min-height:300px; 
+      margin-top:100px;
+      border:1px solid #ccc;
+   }
  }
