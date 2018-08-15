@@ -83,9 +83,11 @@ const renderCss = () => {
         border-radius: ${hoverStyles.brTopLeft} ${hoverStyles.brTopRight} ${hoverStyles.brBottomLeft} ${hoverStyles.brBottomRight};
       }`;
   targ1.innerHTML = `<style> ${styles} </style>`;
-  targ2.innerHTML = `<pre> ${styles} </pre>`;
+  targ2.innerHTML = styles
+  hljs.highlightBlock(targ2);
 }
 renderCss();
+hljs.initHighlightingOnLoad();
 //Targets
 const vertical = document.getElementById('verPad');
 const horizontal = document.getElementById('horPad');
