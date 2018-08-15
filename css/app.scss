@@ -316,4 +316,7 @@
   height: calc(100vh - 48px);
   background-color: $navColor;
   padding:20px;
+  pre {
+    font-size:.7em;
+  }
 }
