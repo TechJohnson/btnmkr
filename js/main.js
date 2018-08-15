@@ -4,8 +4,12 @@ const handleClick = (e) => {
   const active = document.querySelector('.open');
   if(active){
     active.classList.remove('open');
+  } else {
+    e.target.nextElementSibling.classList.add('open')
   }
-  e.target.nextElementSibling.classList.add('open')
+  console.log(e.target);
+  
+  
 }
 dropdown.forEach(element => {
   element.addEventListener('click', handleClick);
