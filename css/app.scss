@@ -205,7 +205,7 @@
  .sideNav {
    min-height: calc(100vh - 48px);
    background: $navColor;
-   width: 288px;
+   width: 25%;
    display: flex;
    flex-direction: column;
    padding: 0;
@@ -303,9 +303,17 @@
    align-items: center;
    height: calc(100vh - 48px);
    #output {
+     display:none;
       width:30%;
       min-height:300px; 
       margin-top:100px;
       border:1px solid #ccc;
    }
  }
+
+.panel {
+  width:25%;
+  height: calc(100vh - 48px);
+  background-color: $navColor;
+  padding:20px;
+}
