@@ -370,12 +370,15 @@ footer a {
 
 .panel {
   width: 25%;
+  max-width: 300px;
   height: calc(100vh - 48px);
   background-color: #2d2d2d;
   padding: 20px;
 }
 
-.panel pre {
+.panel code {
   font-size: .7em;
+  overflow: unset;
+  word-break: break-word;
 }
 /*# sourceMappingURL=app.css.map */
