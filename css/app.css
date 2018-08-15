@@ -380,13 +380,14 @@ footer a {
       -ms-flex-direction: column;
           flex-direction: column;
   min-width: 320px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   height: calc(100vh - 48px);
+}
+
+.button-play-area button {
+  margin-top: 20%;
 }
 
 .button-play-area #output {

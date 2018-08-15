@@ -317,9 +317,11 @@
    width: 50%;
    flex-direction:column;
    min-width: 320px;
-   justify-content: center;
    align-items: center;
    height: calc(100vh - 48px);
+   button {
+    margin-top:20%;
+   }
    #output {
       display:none;
       width:30%;
