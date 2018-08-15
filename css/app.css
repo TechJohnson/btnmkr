@@ -293,14 +293,11 @@ footer a {
           box-shadow: inset 0 10px 50px 0 rgba(0, 0, 0, 0.05), 0 5px 15px 0 rgba(0, 0, 0, 0.03);
   padding: 5px 20px 20px 20px;
   color: white;
-}
-
-.sideNav ul li .controlBox.collapsed {
-  display: block;
-}
-
-.sideNav ul li .controlBox.collapse {
   display: none;
+}
+
+.sideNav ul li .controlBox.open {
+  display: block;
 }
 
 .sideNav ul li .controlBox input {

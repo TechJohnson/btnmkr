@@ -253,11 +253,9 @@
          box-shadow: inset $shadow;
          padding: 5px 20px 20px 20px;
          color: white;
-         &.collapsed {
+         display: none;
+         &.open {
            display: block;
-         }
-         &.collapse {
-           display: none
          }
          input {
            width: 100%;

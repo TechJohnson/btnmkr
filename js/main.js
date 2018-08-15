@@ -1,16 +1,16 @@
 // sideNav dropdowns
 let dropdown = document.querySelectorAll('.dropdown-toggle');
+const handleClick = (e) => {
+  const active = document.querySelector('.open');
+  if(active){
+    active.classList.remove('open');
+  }
+  e.target.nextElementSibling.classList.add('open')
+}
 dropdown.forEach(element => {
-  element.addEventListener('click', e => {
-    if(e.target.nextElementSibling.classList.contains("collapse")) {
-      e.target.nextElementSibling.classList.add('collapsed');
-      e.target.nextElementSibling.classList.remove('collapse');
-    } else {
-      e.target.nextElementSibling.classList.add('collapse');
-      e.target.nextElementSibling.classList.remove('collapsed');
-    }
-  });
+  element.addEventListener('click', handleClick);
 });
+
 
 /* button customisation */
 
