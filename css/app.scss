@@ -187,6 +187,15 @@
        font-size: 14px;
      }
    }
+   .endwrapper {
+     display: flex;
+     align-items: center;
+     padding: 0;
+     margin: 0;
+     img {
+       margin-right: 10px;
+     }
+   }
    .endwrapper a {
      padding: 14px 0;
      color: darken($white, 50%);
