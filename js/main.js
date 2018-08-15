@@ -36,7 +36,11 @@ let hoverStyles = {
   paddingTop:"12px",
   paddingBottom:"12px",
   paddingLeft:"48px",
-  paddingRight:"48px"
+  paddingRight:"48px",
+  brTopLeft: "5px",
+  brTopRight: "5px",
+  brBottomLeft: "5px",
+  brBottomRight: "5px"
 }
 let defaultStyles = {
   backgroundColor: "#e47676",
@@ -45,11 +49,15 @@ let defaultStyles = {
   paddingTop:"12px",
   paddingBottom:"12px",
   paddingLeft:"48px",
-  paddingRight:"48px"
+  paddingRight:"48px",
+  brTopLeft: "5px",
+  brTopRight: "5px",
+  brBottomLeft: "5px",
+  brBottomRight: "5px"
 }
 const renderCss = () => {
   const targ1 = document.getElementById('styles');
-  //const targ2 = document.getElementById('output');
+  const targ2 = document.getElementById('output');
   let styles = "";
 
   styles = 
@@ -62,6 +70,7 @@ const renderCss = () => {
         padding-right:${defaultStyles.paddingRight};
         border-color: ${defaultStyles.borderColor};
         color: ${defaultStyles.textColor};
+        border-radius: ${defaultStyles.brTopLeft} ${defaultStyles.brTopRight} ${defaultStyles.brBottomLeft} ${defaultStyles.brBottomRight};
       }
       #cstBtn:hover { 
         background-color: ${hoverStyles.backgroundColor};
@@ -71,9 +80,10 @@ const renderCss = () => {
         padding-right:${hoverStyles.paddingRight};
         border-color: ${hoverStyles.borderColor};
         color: ${hoverStyles.textColor};
+        border-radius: ${hoverStyles.brTopLeft} ${hoverStyles.brTopRight} ${hoverStyles.brBottomLeft} ${hoverStyles.brBottomRight};
       }`;
   targ1.innerHTML = `<style> ${styles} </style>`;
-  //targ2.innerHTML = `<pre> ${styles} </pre>`;
+  targ2.innerHTML = `<pre> ${styles} </pre>`;
 }
 renderCss();
 //Targets
@@ -91,6 +101,7 @@ const BgHexBox = document.getElementById('bgColPickHex');
 const BordercpTarg = document.getElementById('borderColPick');
 const BorderColorPicker = new Picker({parent: BordercpTarg, editor:false});
 const BorderHexBox = document.getElementById('borderColPickHex');
+const HoverBorderRadius = document.getElementById('hovborderRadius');
 const HoverTxtcpTarg = document.getElementById('hovtxtColPick');
 const HoverTxtColorPicker = new Picker({parent: HoverTxtcpTarg, editor:false});
 const HoverTxtHexBox = document.getElementById('hovtxtColPickHex');
@@ -101,6 +112,9 @@ const HoverBordercpTarg = document.getElementById('hovborderColPick');
 const HoverBorderColorPicker = new Picker({parent: HoverBordercpTarg, editor:false});
 const HoverBorderHexBox = document.getElementById('hovborderColPickHex');
 
+textBox.addEventListener('input', e => {
+  button.textContent = e.target.value;
+})
 vertical.addEventListener('input', e => {
   defaultStyles.paddingTop = e.target.value+"px";
   defaultStyles.paddingBottom = e.target.value+"px";
@@ -111,19 +125,6 @@ horizontal.addEventListener('input', e => {
   defaultStyles.paddingRight= e.target.value+"px";
   renderCss();
 })
-HoverVertical.addEventListener('input', e => {
-  hoverStyles.paddingTop = e.target.value+"px";
-  hoverStyles.paddingBottom= e.target.value+"px";
-  renderCss();
-})
-HoverHorizontal.addEventListener('input', e => {
-  hoverStyles.paddingLeft = e.target.value+"px";
-  hoverStyles.paddingRight= e.target.value+"px";
-  renderCss();
-})
-textBox.addEventListener('input', e => {
-  button.textContent = e.target.value;
-})
 BorderColorPicker.setColor('#e47676');
 BorderColorPicker.onChange = color => {
   defaultStyles.borderColor = color.hex;
@@ -131,6 +132,14 @@ BorderColorPicker.onChange = color => {
   BordercpTarg.style.backgroundColor = color.hex;
   renderCss();
 }
+brs = document.querySelectorAll('.br');
+brs.forEach(el => {
+  el.addEventListener("input", e => {
+    let bid = e.target.id;
+    defaultStyles[bid] = e.target.value+"px";
+    renderCss();
+  })
+})
 TxtColorPicker.setColor('#fff');
 TxtColorPicker.onChange = color => {
   defaultStyles.textColor = color.hex;
@@ -146,7 +155,25 @@ BgColorPicker.onChange = color => {
   renderCss();
 }
 
-
+//HOVER
+HoverVertical.addEventListener('input', e => {
+  hoverStyles.paddingTop = e.target.value+"px";
+  hoverStyles.paddingBottom= e.target.value+"px";
+  renderCss();
+})
+HoverHorizontal.addEventListener('input', e => {
+  hoverStyles.paddingLeft = e.target.value+"px";
+  hoverStyles.paddingRight= e.target.value+"px";
+  
+})
+brs = document.querySelectorAll('.brHover');
+brs.forEach(el => {
+  el.addEventListener("input", e => {
+    let bid = e.target.id;
+    hoverStyles[bid] = e.target.value+"px";
+    renderCss();
+  })
+})
 HoverBorderColorPicker.setColor('#e47676');
 HoverBorderColorPicker.onChange = color => {
   hoverStyles.borderColor = color.hex;
