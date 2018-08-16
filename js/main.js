@@ -33,7 +33,7 @@ let button = document.getElementById('cstBtn');
 //     fontSelect.innerHTML += `<option value="${font}">${font}</option>`;
 //   });
 // })
-
+document.querySelector('.endwrapper img').addEventListener('click',() => {location.reload()});
 let hoverStyles = {
   backgroundColor: "#e47676",
   textColor:"#fff",
