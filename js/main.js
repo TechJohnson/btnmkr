@@ -8,9 +8,6 @@ const handleClick = (e) => {
   if (active != e.currentTarget.nextElementSibling) {
   	e.currentTarget.nextElementSibling.classList.add('open')
   }
-  console.log(e.target);
-  
-   
 }
 dropdown.forEach(element => {
   element.addEventListener('click', handleClick);
