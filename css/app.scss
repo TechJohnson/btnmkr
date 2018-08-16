@@ -194,6 +194,7 @@
      margin: 0;
      img {
        margin-right: 10px;
+       cursor:pointer;
      }
    }
    .endwrapper a {
@@ -319,8 +320,10 @@
    min-width: 320px;
    align-items: center;
    height: calc(100vh - 48px);
+   overflow:hidden;
    button {
     margin-top:20%;
+    word-break: break-all;
    }
    #output {
       display:none;
@@ -338,7 +341,10 @@
   padding:20px;
   code {
     font-size: .7em;
-    overflow: unset;
+    overflow-y: scroll;
     word-break: break-word;
+    &.html {
+      max-height:200px;
+    }
   }
 }
