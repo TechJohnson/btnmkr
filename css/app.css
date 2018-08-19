@@ -448,4 +448,130 @@ footer a {
 .panel code.html {
   max-height: 200px;
 }
+
+/* Preferences Modal */
+.bgDark {
+  background-color: rgba(0, 0, 0, 0.75);
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+.bgDark .modal {
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.05), 0 5px 15px 0 rgba(0, 0, 0, 0.03);
+          box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.05), 0 5px 15px 0 rgba(0, 0, 0, 0.03);
+}
+
+.bgDark .modal p {
+  color: #fff;
+}
+
+.bgDark .modal h2 {
+  font-size: 20px;
+  text-transform: uppercase;
+  color: #bfbfbf;
+  padding: 0 25px 15px 25px;
+  margin: 0;
+}
+
+.bgDark .left {
+  background-color: #1b2021;
+  padding: 25px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  width: 250px;
+}
+
+.bgDark .left ul {
+  list-style: none;
+  padding: 15px 0;
+  margin: 0;
+}
+
+.bgDark .left ul li {
+  padding: 0;
+  margin: 0;
+}
+
+.bgDark .left ul li a {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  display: block;
+  padding: 10px 25px;
+}
+
+.bgDark .left ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 5px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.bgDark .left ul li a.active {
+  background-color: #e47676;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.bgDark .right {
+  background-color: #232829;
+  padding: 25px;
+  width: 550px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.bgDark .right hr {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 0 25px;
+}
+
+.bgDark .right .whiteSquare {
+  height: 15px;
+  width: 15px;
+  background-color: #fff;
+  margin-right: 25px;
+}
+
+.bgDark .right .appWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.bgDark .right ul {
+  list-style: none;
+  padding: 15px 0;
+  margin: 0;
+}
+
+.bgDark .right ul li {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  display: block;
+  padding: 10px 25px;
+}
 /*# sourceMappingURL=app.css.map */
