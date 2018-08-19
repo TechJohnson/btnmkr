@@ -467,8 +467,8 @@ footer a {
   padding: 0;
   margin: 0;
   visibility: hidden;
-  -webkit-transition: all ease-in-out .5s;
-  transition: all ease-in-out .5s;
+  -webkit-transition: all ease-in-out .2s;
+  transition: all ease-in-out .2s;
   opacity: 0;
 }
 
