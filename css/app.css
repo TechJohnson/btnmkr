@@ -455,9 +455,7 @@ footer a {
   height: 100vh;
   width: 100vw;
   position: fixed;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -466,6 +464,12 @@ footer a {
           justify-content: center;
   padding: 0;
   margin: 0;
+}
+
+.bgDark.show {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .bgDark .modal {
