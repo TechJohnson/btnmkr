@@ -179,7 +179,8 @@ footer a {
 /* Navigation */
 .topNav {
   width: 100%;
-  background-color: #1c2022;
+  background-color: #1b2021;
+  border-bottom: 1px solid #1a1a1a;
   padding: 0;
   margin: 0;
   display: -webkit-box;
@@ -257,7 +258,8 @@ footer a {
 
 .sideNav {
   min-height: calc(100vh - 48px);
-  background: #24282a;
+  background: #232829;
+  border-bottom: 1px solid #1a1a1a;
   width: 25%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -271,13 +273,14 @@ footer a {
 }
 
 .sideNav h2 {
-  font-size: 18px;
+  font-size: 14px;
   color: gray;
   padding: 25px 0 0 35px;
   margin: 0;
 }
 
 .sideNav ul {
+  font-size: 14px;
   padding: 0;
 }
 
@@ -291,19 +294,20 @@ footer a {
 
 .sideNav ul li a {
   color: #fff;
-  font-size: 16px;
+  font-size: 14px;
   display: block;
   max-width: 100%;
   padding: 15px 0 15px 50px;
 }
 
 .sideNav ul li a:hover {
-  color: #b3b3b3;
+  border-left: 2px solid #e47676;
+  background-color: rgba(228, 118, 118, 0.1);
   cursor: pointer;
 }
 
 .sideNav ul li .controlBox {
-  background-color: #1d2022;
+  background-color: #1c2021;
   -webkit-box-shadow: inset 0 10px 50px 0 rgba(0, 0, 0, 0.05), 0 5px 15px 0 rgba(0, 0, 0, 0.03);
           box-shadow: inset 0 10px 50px 0 rgba(0, 0, 0, 0.05), 0 5px 15px 0 rgba(0, 0, 0, 0.03);
   padding: 5px 20px 20px 20px;
