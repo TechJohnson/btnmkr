@@ -34,8 +34,8 @@
 
 
   <!--Preferences Modal-->
-  <div class="bgDark">
-    <div class="modal">
+  <div id="modalBackdrop" class="bgDark">
+    <div id="modalWindow" class="modal">
       <div class="left">
         <h2>Preferences</h2>
         <ul>
@@ -55,7 +55,7 @@
         </div>
 
         <div class="appRight">
-          <div class="whiteSquare"></div>
+          <div id="pabgbtn" class="whiteSquare"></div>
         </div>
       </div>
 
@@ -78,7 +78,7 @@
       </a>
       <div class="endwrapper">
         <img src="/img/reset.svg" alt="reset button" width="20">
-        <img src="/img/settings-cog.svg" alt="settings button" width="19">
+        <img src="/img/settings-cog.svg" id="settings" alt="settings button" width="19">
         <button class="coffee" onclick="window.open('https://www.buymeacoffee.com/btnmkr','_blank');">Buy Us Coffee</button>
       </div>
     </nav>
@@ -206,12 +206,7 @@
       </nav>
 
       <!--Main button window-->
-      <div class="button-play-area">
-          <div  style="
-          width: 100%;
-          height: 40px;
-          background: red;
-      "></div>
+      <div class="button-play-area" id="btnplayarea">
         <button id="cstBtn" class="btn">Enter text</button>
         
       </div>
