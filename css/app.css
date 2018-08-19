@@ -300,6 +300,12 @@ footer a {
   padding: 15px 0 15px 50px;
 }
 
+.sideNav ul li a.act {
+  border-left: 2px solid #e47676;
+  background-color: rgba(228, 118, 118, 0.1);
+  cursor: pointer;
+}
+
 .sideNav ul li a:hover {
   border-left: 2px solid #e47676;
   background-color: rgba(228, 118, 118, 0.1);

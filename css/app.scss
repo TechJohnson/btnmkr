@@ -254,6 +254,11 @@
          display: block;
          max-width: 100%;
          padding: 15px 0 15px 50px;
+         &.act {
+          border-left: 2px solid $pink;
+          background-color: rgba($pink, .1);
+          cursor: pointer; 
+         }
          &:hover {
            border-left: 2px solid $pink;
            background-color: rgba($pink, .1);

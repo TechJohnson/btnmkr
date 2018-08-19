@@ -2,11 +2,18 @@
 let dropdown = document.querySelectorAll('.dropdown-toggle');
 const handleClick = (e) => {
   const active = document.querySelector('.open');
+  const act = document.querySelector('.act');
   if(active){
     active.classList.remove('open');
   } 
+  if (act) {
+    act.classList.remove('act');
+  }
   if (active != e.currentTarget.nextElementSibling) {
   	e.currentTarget.nextElementSibling.classList.add('open')
+  }
+  if(act != e.currentTarget) {
+    e.currentTarget.classList.add('act');
   }
 }
 dropdown.forEach(element => {
