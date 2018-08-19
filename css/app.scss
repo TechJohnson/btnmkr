@@ -251,9 +251,10 @@
        a {
          color: $white;
          font-size: 14px;
+         border-left: 2px solid $dark-gray2;
          display: block;
          max-width: 100%;
-         padding: 15px 0 15px 50px;
+         padding: 15px 0 15px 45px;
          &.act {
           border-left: 2px solid $pink;
           background-color: rgba($pink, .1);
@@ -263,6 +264,9 @@
            border-left: 2px solid $pink;
            background-color: rgba($pink, .1);
            cursor: pointer;
+         }
+         span {
+           padding-right: 10px;
          }
        }
        .controlBox {

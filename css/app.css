@@ -295,9 +295,10 @@ footer a {
 .sideNav ul li a {
   color: #fff;
   font-size: 14px;
+  border-left: 2px solid #232829;
   display: block;
   max-width: 100%;
-  padding: 15px 0 15px 50px;
+  padding: 15px 0 15px 45px;
 }
 
 .sideNav ul li a.act {
@@ -310,6 +311,10 @@ footer a {
   border-left: 2px solid #e47676;
   background-color: rgba(228, 118, 118, 0.1);
   cursor: pointer;
+}
+
+.sideNav ul li a span {
+  padding-right: 10px;
 }
 
 .sideNav ul li .controlBox {
