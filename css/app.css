@@ -557,6 +557,7 @@ footer a {
   width: 15px;
   background-color: #fff;
   margin-right: 25px;
+  cursor: pointer;
 }
 
 .bgDark .right .appWrapper {
