@@ -272,6 +272,11 @@ footer a {
   margin: 0;
 }
 
+.sideNav select {
+  height: 30px;
+  width: 100%;
+}
+
 .sideNav h2 {
   font-size: 14px;
   color: gray;
@@ -447,6 +452,12 @@ footer a {
 
 .panel code.html {
   max-height: 200px;
+}
+
+.panel h3 {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 400;
 }
 
 /* Preferences Modal */

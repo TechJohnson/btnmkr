@@ -234,6 +234,10 @@
    flex-direction: column;
    padding: 0;
    margin: 0;
+   select {
+     height: 30px;
+     width: 100%;
+   }
    h2 {
      font-size: 14px;
      color: darken($white, 50%);
@@ -370,6 +374,11 @@
     &.html {
       max-height:200px;
     }
+  }
+  h3 {
+    color: $white;
+    font-size: 18px;
+    font-weight: 400;
   }
 }
 
