@@ -43,6 +43,7 @@ let hoverStyles = {
   brTopRight: "5px",
   brBottomLeft: "5px",
   brBottomRight: "5px",
+  borderThickness: "2px",
   fontSize: "18px"
 }
 let defaultStyles = {
@@ -57,6 +58,7 @@ let defaultStyles = {
   brTopRight: "5px",
   brBottomLeft: "5px",
   brBottomRight: "5px",
+  borderThickness: "2px",
   fontSize: "18px"
 }
 const render = () => {
@@ -71,6 +73,7 @@ const render = () => {
   padding-left:${defaultStyles.paddingLeft};
   padding-right:${defaultStyles.paddingRight};
   border-color: ${defaultStyles.borderColor};
+  border-width: ${defaultStyles.borderThickness};
   border-radius: ${defaultStyles.brTopLeft} ${defaultStyles.brTopRight} ${defaultStyles.brBottomLeft} ${defaultStyles.brBottomRight};
   color: ${defaultStyles.textColor};
   font-size: ${defaultStyles.fontSize};
@@ -82,6 +85,7 @@ const render = () => {
   padding-left:${hoverStyles.paddingLeft};
   padding-right:${hoverStyles.paddingRight};
   border-color: ${hoverStyles.borderColor};
+  border-width: ${hoverStyles.borderThickness};
   border-radius: ${hoverStyles.brTopLeft} ${hoverStyles.brTopRight} ${hoverStyles.brBottomLeft} ${hoverStyles.brBottomRight};
   color: ${hoverStyles.textColor};
   font-size: ${hoverStyles.fontSize};
@@ -110,6 +114,7 @@ const BgHexBox = document.getElementById('bgColPickHex');
 const BordercpTarg = document.getElementById('borderColPick');
 const BorderColorPicker = new Picker({parent: BordercpTarg, editor:false});
 const BorderHexBox = document.getElementById('borderColPickHex');
+const BorderThickness = document.getElementById('borderThickness');
 const HoverBorderRadius = document.getElementById('hovborderRadius');
 const HoverfontSize = document.getElementById('hovfontSize');
 const HoverTxtcpTarg = document.getElementById('hovtxtColPick');
@@ -121,6 +126,7 @@ const HoverBgHexBox = document.getElementById('hovbgColPickHex');
 const HoverBordercpTarg = document.getElementById('hovborderColPick');
 const HoverBorderColorPicker = new Picker({parent: HoverBordercpTarg, editor:false});
 const HoverBorderHexBox = document.getElementById('hovborderColPickHex');
+const HoverBorderThickness = document.getElementById('hovborderThickness');
 
 textBox.addEventListener('input', e => {
   button.textContent = e.target.value;
@@ -160,6 +166,10 @@ brs.forEach(el => {
     render();
   })
 })
+BorderThickness.addEventListener('input', e => {
+  defaultStyles.borderThickness = e.target.value+"px";
+  render();
+});
 TxtColorPicker.setColor('#fff');
 TxtColorPicker.onChange = color => {
   defaultStyles.textColor = color.hex;
@@ -205,6 +215,10 @@ HoverBorderColorPicker.onChange = color => {
   BordercpTarg.style.backgroundColor = color.hex;
   render();
 }
+HoverBorderThickness.addEventListener('input', e => {
+  hoverStyles.borderThickness = e.target.value+"px";
+  render();
+});
 HoverTxtColorPicker.setColor('#fff');
 HoverTxtColorPicker.onChange = color => {
   hoverStyles.textColor = color.hex;
