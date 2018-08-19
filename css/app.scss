@@ -297,7 +297,11 @@
          .color-wrapper {
            display: flex;
            justify-content: space-between;
-           input,
+           height:30px;
+           .hex-box {
+             display:none;
+           }
+           //input.hex-box,
            .color-picker {
              width: 40%;
            }

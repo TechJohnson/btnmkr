@@ -361,9 +361,13 @@ footer a {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  height: 30px;
 }
 
-.sideNav ul li .controlBox .color-wrapper input,
+.sideNav ul li .controlBox .color-wrapper .hex-box {
+  display: none;
+}
+
 .sideNav ul li .controlBox .color-wrapper .color-picker {
   width: 40%;
 }
