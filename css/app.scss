@@ -267,6 +267,12 @@
          }
          span {
            padding-right: 10px;
+           img{
+             transition: transform ease .3s;
+              &.rotated {
+                transform: rotate(90deg);
+              }
+            }
          }
        }
        .controlBox {

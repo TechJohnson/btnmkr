@@ -3,14 +3,22 @@ let dropdown = document.querySelectorAll('.dropdown-toggle');
 const handleClick = (e) => {
   const active = document.querySelector('.open');
   const act = document.querySelector('.act');
+  const rotated = document.querySelector('.rotated');
+  
   if(active){
     active.classList.remove('open');
   } 
   if (act) {
     act.classList.remove('act');
   }
+  if (rotated) {
+    rotated.classList.remove('rotated');
+  }
   if (active != e.currentTarget.nextElementSibling) {
   	e.currentTarget.nextElementSibling.classList.add('open')
+  }
+  if (rotated != e.currentTarget.querySelector("span>img")){
+    e.currentTarget.querySelector("span>img").classList.add('rotated');
   }
   if(act != e.currentTarget) {
     e.currentTarget.classList.add('act');

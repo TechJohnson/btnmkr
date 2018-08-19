@@ -317,6 +317,18 @@ footer a {
   padding-right: 10px;
 }
 
+.sideNav ul li a span img {
+  -webkit-transition: -webkit-transform ease .3s;
+  transition: -webkit-transform ease .3s;
+  transition: transform ease .3s;
+  transition: transform ease .3s, -webkit-transform ease .3s;
+}
+
+.sideNav ul li a span img.rotated {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
 .sideNav ul li .controlBox {
   background-color: #1c2021;
   -webkit-box-shadow: inset 0 10px 50px 0 rgba(0, 0, 0, 0.05), 0 5px 15px 0 rgba(0, 0, 0, 0.03);
